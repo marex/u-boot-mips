@@ -308,4 +308,12 @@ config MPC8XXX_GPIO
 	  Aside from the standard functions of input/output mode, and output
 	  value setting, the open-drain feature, which can configure individual
 	  GPIOs to work as open-drain outputs, is supported.
+
+config JZ47XX_GPIO
+	bool "Ingenic JZ47xx GPIO driver"
+	depends on ARCH_JZ47XX
+	default y
+	help
+	  Supports GPIO access on Ingenic JZ47xx SoCs.
+
 endmenu
