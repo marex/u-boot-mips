@@ -22,7 +22,7 @@ _start:
 #ifdef CONFIG_SPL_BUILD
 
 	/* magic value ("MSPL") */
-	.word 0x4d53504c
+/*	.word 0x4d53504c*/
 
 	/* Invalidate BTB */
 	mfc0	t0, CP0_CONFIG, 7
