@@ -60,6 +60,13 @@
 /* Miscellaneous configuration options */
 #define CONFIG_SYS_BOOTM_LEN		(64 << 20)
 #define CONFIG_BOOTARGS			"console=ttyS0,115200 rw rootwait"
+#define CONFIG_BOOTCOMMAND		"echo fixme"
+#define CONFIG_EXTRA_ENV_SETTINGS					\
+	"update_sd="							\
+		"dhcp 192.168.1.1:ci20/u-boot-spl.bin && "		\
+			"mmc write $loadaddr 1 0x1b && "		\
+		"dhcp 192.168.1.1:ci20/u-boot.img && "			\
+			"mmc write $loadaddr 0x1c 0x400\0"
 
 /* SPL */
 #define CONFIG_SPL_STACK		0xf4008000 /* only max. 2KB spare! */
